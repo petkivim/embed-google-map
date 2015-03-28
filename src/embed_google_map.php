@@ -1,8 +1,8 @@
 <?php
 /**
-* @version		$Id: Embed Google Map v2.0.0 2014-06-05 17:50 $
+* @version		$Id: Embed Google Map v2.0.1 2015-03-28 16:06 $
 * @package		Joomla 1.6
-* @copyright	Copyright (C) 2014 Petteri Kivimäki. All rights reserved.
+* @copyright	Copyright (C) 2014-2015 Petteri Kivimäki. All rights reserved.
 * @author		Petteri Kivimäki
 * Joomla! is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -14,9 +14,9 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 jimport('joomla.plugin.plugin');
 
-require_once __DIR__ . '/parameters.php';
-require_once __DIR__ . '/builderFactory.php';
-require_once __DIR__ . '/parser.php';
+require_once __DIR__ . '/embedGoogleMapParameters.php';
+require_once __DIR__ . '/embedGoogleMapBuilderFactory.php';
+require_once __DIR__ . '/embedGoogleMapParser.php';
 
 class plgContentembed_google_map extends JPlugin
 {
@@ -38,7 +38,7 @@ class plgContentembed_google_map extends JPlugin
 			foreach ( $matches[0] as $value ) 
 			{			
 				// Plugin params
-				$plgParams = new Parameters;
+				$plgParams = new EmbedGoogleMapParameters;
 				// Load plugin params		
 				$plgParams->setVersion($this->params->def('version', 'new'));
 				$plgParams->setEmbedAPIKey($this->params->def('embed_api_key', ''));
@@ -65,7 +65,7 @@ class plgContentembed_google_map extends JPlugin
 				if( strstr($map, $find) )
 				{
 					// New Parser object
-					$parser = new Parser;
+					$parser = new EmbedGoogleMapParser;
 					// Parse parameters
 					$parser->parse($map, $plgParams);
 				} else {
@@ -85,7 +85,7 @@ class plgContentembed_google_map extends JPlugin
 					$plgParams->setLinkLabel(JText::_($mtcs[1]));
 				}
 				// Create new HTML builder
-				$builder = BuilderFactory::createBuilder($plgParams->getVersion());
+				$builder = EmbedGoogleMapBuilderFactory::createBuilder($plgParams->getVersion());
 				// Generate HTML code
 				$replacement[$count] = $builder->buildHtml($plgParams);
 				// Increase counter

@@ -1,8 +1,8 @@
 <?php
 /**
-* @version		$Id: Embed Google Map v2.0.0 2014-05-30 17:30 $
+* @version		$Id: Embed Google Map v2.0.1 2015-03-28 16:06 $
 * @package		Joomla 1.6
-* @copyright	Copyright (C) 2014 Petteri Kivimäki. All rights reserved.
+* @copyright	Copyright (C) 2014-2015 Petteri Kivimäki. All rights reserved.
 * @author		Petteri Kivimäki
 * Joomla! is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -10,9 +10,9 @@
 * other free or open source software licenses.
 */
 
-  require_once __DIR__ . '/htmlBuilder.php';
+  require_once __DIR__ . '/embedGoogleMapHtmlBuilder.php';
 
-  class ClassicHtmlBuilder extends HtmlBuilder {
+  class EmbedGoogleMapClassicHtmlBuilder extends EmbedGoogleMapHtmlBuilder {
 
     private $baseUrl = "http://maps.google.com/";
 
@@ -62,4 +62,3 @@
   }
 
 ?>
-

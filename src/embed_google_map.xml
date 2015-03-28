@@ -2,23 +2,23 @@
 <extension version="1.6" type="plugin" group="content" method="upgrade">
     <name>PLG_EMBED_GOOGLE_MAP</name>
     <author>Petteri Kivimäki</author>
-    <creationDate>5 June 2014</creationDate>
-    <copyright>(C)2012-2014 Petteri Kivimäki</copyright>
+    <creationDate>28 March 2015</creationDate>
+    <copyright>(C)2012-2015 Petteri Kivimäki</copyright>
     <license>http://www.gnu.org/copyright/gpl.html GNU/GPL</license>
-    <authorEmail>petteri.kivimaki@helsinki.fi</authorEmail>
-    <version>2.0.0</version>
+    <authorEmail>dinky_jackson@hotmail.com</authorEmail>
+    <version>2.0.1</version>
     <description>PLG_EMBED_GOOGLE_MAP_DESC</description>
 	<files>
         <filename plugin="embed_google_map">embed_google_map.php</filename>
-		<filename>parameters.php</filename>
+		<filename>embedGoogleMapParameters.php</filename>
 		<!-- Parser -->
-		<filename>parser.php</filename>
+		<filename>embedGoogleMapParser.php</filename>
 		<!-- Builders -->
-		<filename>builderFactory.php</filename>
-		<filename>htmlBuilder.php</filename>
-		<filename>classicHtmlBuilder.php</filename>
-		<filename>newHtmlBuilder.php</filename>
-		<filename>embedAPIHtmlBuilder.php</filename>
+		<filename>embedGoogleMapBuilderFactory.php</filename>
+		<filename>embedGoogleMapHtmlBuilder.php</filename>
+		<filename>embedGoogleMapClassicHtmlBuilder.php</filename>
+		<filename>embedGoogleMapNewHtmlBuilder.php</filename>
+		<filename>embedGoogleMapEmbedAPIHtmlBuilder.php</filename>
 		<!-- Other files-->
 		<filename>index.html</filename>
 		<filename>license-gpl.txt</filename>
