@@ -27,19 +27,19 @@ Embed Google Map is a plugin for embedding one or more Google Maps to Joomla art
 
 ## Syntax
 
-{google_map}address{/google_map}
-{google_map}address|version:classic{/google_map}
-{google_map}address|zoom:10{/google_map}
-{google_map}address|zoom:10|lang:it{/google_map}
-{google_map}address|lang:system{/google_map}
-{google_map}address|width:200|height:200|border:1|border_style:solid|border_color:#000000{/google_map}
-{google_map}address|width:200|height:200|link:yes|link_label:Label{/google_map}
-{google_map}address|link:yes{/google_map}
-{google_map}address|type:satellite{/google_map}
-{google_map}address|show_info:yes|info_label:Label{/google_map}
-{google_map}address|link_full:yes{/google_map}
-{google_map}address|https:yes{/google_map}<br />
-&#42; {google_map}latitude,longitude{/google_map}
+* {google_map}address{/google_map}
+* {google_map}address|version:classic{/google_map}
+* {google_map}address|zoom:10{/google_map}
+* {google_map}address|zoom:10|lang:it{/google_map}
+* {google_map}address|lang:system{/google_map}
+* {google_map}address|width:200|height:200|border:1|border_style:solid|border_color:#000000{/google_map}
+* {google_map}address|width:200|height:200|link:yes|link_label:Label{/google_map}
+* {google_map}address|link:yes{/google_map}
+* {google_map}address|type:satellite{/google_map}
+* {google_map}address|show_info:yes|info_label:Label{/google_map}
+* {google_map}address|link_full:yes{/google_map}
+* {google_map}address|https:yes{/google_map}<br />
+* \* {google_map}latitude,longitude{/google_map}
 
 \* latitude,longitude = coordinates in decimal degrees
 
