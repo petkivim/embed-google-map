@@ -46,7 +46,11 @@
     }
 	
     public function setAddress($value) {
-      $this->address = urlencode($value);
+      $this->address = $value;
+      // Address must not be URL encoded if it's a link
+      if($this->isLink() != 0) {
+        $this->address = urlencode($value);
+      }      
     }
 
     public function getAddress() {
