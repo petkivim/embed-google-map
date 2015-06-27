@@ -2,8 +2,8 @@
 /**
 * @version		$Id: Embed Google Map v2.0.1 2015-03-28 16:06 $
 * @package		Joomla 1.6
-* @copyright	Copyright (C) 2014-2015 Petteri Kivimäki. All rights reserved.
-* @author		Petteri Kivimäki
+* @copyright	Copyright (C) 2014-2015 Petteri KivimÃ¤ki. All rights reserved.
+* @author		Petteri KivimÃ¤ki
 * Joomla! is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -46,7 +46,7 @@
     }
 	
     public function setAddress($value) {
-      $this->address = $value;
+      $this->address = urlencode($value);
     }
 
     public function getAddress() {
