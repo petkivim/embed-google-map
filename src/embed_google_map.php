@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.0.2 2016-03-27 16:19 $
+ * @version	$Id: Embed Google Map v2.1.0 2016-06-25 12:06 $
  * @package	Joomla 1.6
  * @copyright	Copyright (C) 2014-2016 Petteri Kivimäki. All rights reserved.
  * @author	Petteri Kivimäki
@@ -48,6 +48,8 @@ class plgContentembed_google_map extends JPlugin {
                 $plgParams->setBorderColor($this->params->def('border_color', '#000000'));
                 $plgParams->setHttps($this->params->def('https', 1));
                 $plgParams->setInfoLabel("");
+				$plgParams->setLoadAsync($this->params->def('load_async', 1));
+				$plgParams->setDelayMs($this->params->def('delay_ms', 2000));
 
                 $map = $value;
                 $map = str_replace('{google_map}', '', $map);
@@ -78,7 +80,7 @@ class plgContentembed_google_map extends JPlugin {
                 // Create new HTML builder
                 $builder = EmbedGoogleMapBuilderFactory::createBuilder($plgParams->getVersion());
                 // Generate HTML code
-                $replacement[$count] = $builder->buildHtml($plgParams);
+                $replacement[$count] = $builder->html($plgParams);
                 // Increase counter
                 $count++;
             }

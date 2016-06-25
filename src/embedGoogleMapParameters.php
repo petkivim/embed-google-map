@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.0.2 2016-03-27 16:19 $
+ * @version	$Id: Embed Google Map v2.1.0 2016-06-25 12:06 $
  * @package	Joomla 1.6
  * @copyright	Copyright (C) 2014-2016 Petteri Kivimäki. All rights reserved.
  * @author	Petteri Kivimäki
@@ -25,6 +25,8 @@ class EmbedGoogleMapParameters {
     private $borderColor = "#000000";
     private $https = 1;
     private $infoLabel = "";
+	private $loadAsync = 1;
+	private $delayMs = 2000;
 
     public function setVersion($value) {
         $this->version = $value;
@@ -165,7 +167,23 @@ class EmbedGoogleMapParameters {
     public function getInfoLabel() {
         return $this->infoLabel;
     }
+	
+    public function setLoadAsync($value) {
+        $this->loadAsync = $value;
+    }
 
+    public function getLoadAsync() {
+        return $this->loadAsync;
+    }
+	
+    public function setDelayMs($value) {
+        $this->delayMs = $value;
+    }
+
+    public function getDelayMs() {
+        return $this->delayMs;
+    }
+	
     public function setIsGoogleMapsEngine($value) {
         $this->isGoogleMapsEngine = $value;
     }

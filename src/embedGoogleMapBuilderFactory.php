@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.0.2 2016-03-27 16:19 $
+ * @version	$Id: Embed Google Map v2.1.0 2016-06-25 12:06 $
  * @package	Joomla 1.6
  * @copyright	Copyright (C) 2014-2016 Petteri Kivimäki. All rights reserved.
  * @author	Petteri Kivimäki

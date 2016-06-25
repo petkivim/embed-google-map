@@ -1,14 +1,25 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.0.2 2016-03-27 16:19 $
+ * @version	$Id: Embed Google Map v2.1.0 2016-06-25 12:06 $
  * @package	Joomla 1.6
  * @copyright	Copyright (C) 2014-2016 Petteri Kivimäki. All rights reserved.
  * @author	Petteri Kivimäki
  */
 abstract class EmbedGoogleMapHtmlBuilder {
 
-    abstract public function buildHtml(&$params);
+	private static $scriptDeclarationAdded = false;
+	
+    abstract protected function buildHtml(&$params);
+	
+	public function html(&$params) {
+		if ($params->getLoadAsync() == 0 && self::$scriptDeclarationAdded == false) {
+			$this->addLoadAsyncScript($params->getDelayMs());
+			self::$scriptDeclarationAdded = true;
+		}
+		
+		return $this->buildHtml($params);	
+	}
 
     protected function getUrl(&$params, $baseUrl) {
         $url = "";
@@ -38,6 +49,42 @@ abstract class EmbedGoogleMapHtmlBuilder {
         return "<div><a href='$url' target='new'>$label</a></div>\n";
     }
 
+	private function addLoadAsyncScript($delayMs) {
+		$document = JFactory::getDocument();
+
+		$document->addScriptDeclaration('
+			jQuery(function($) {
+				// Array for frame sources
+				var sources = [];
+
+				$(document).ready(function () {
+					// Loop through all the iframes on the page
+					$("iframe").each(function () {
+						// Get the value of src
+						var src = $(this).attr(\'src\');
+						// Set src to empty
+						$(this).attr(\'src\', \'\');
+						// Store src in the array
+						sources.push(src);
+					});
+				});
+
+				$(window).load(function () {
+					function loadGMaps() {
+						var i = 0;
+						// Loop through all the iframes on the page
+						$("iframe").each(function () {
+							// Get src value from the array
+							$(this).attr(\'src\', sources[i]);
+							i++;
+						});
+					}
+					// Set 2 seconds delay for loading Google Maps
+					setTimeout(loadGMaps, ' . $delayMs . ');
+				});
+			});
+		');		
+	}
 }
 
 ?>
