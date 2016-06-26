@@ -10,6 +10,7 @@ abstract class EmbedGoogleMapHtmlBuilder {
 
     private static $scriptDeclarationAdded = false;
     private static $scrollingDeclarationAdded = false;
+    private static $mapCounter = 1;
 
     abstract protected function buildHtml(&$params);
 
@@ -19,13 +20,15 @@ abstract class EmbedGoogleMapHtmlBuilder {
             $this->addLoadAsyncScript($params->getDelayMs());
             self::$scriptDeclarationAdded = true;
         }
-        if ($params->getScrolling() == 1 && self::$scrollingDeclarationAdded == false) {
-            $this->addLoadNoScrollCss();
-            $this->addLoadNoScrollScript();
-            self::$scrollingDeclarationAdded = true;
-            $html = '<div class="embedGoogleMapWrapper">' . $html . '</div>';
+        if ($params->getScrolling() == 1) {
+            if (self::$scrollingDeclarationAdded == false) {
+                $this->addLoadNoScrollCss();
+                $this->addLoadNoScrollScript();
+                self::$scrollingDeclarationAdded = true;
+            }
+            $html = '<div class="embedGoogleMapWrapper" id="embedGoogleMapWrapper-' . self::$mapCounter . '">' . $html . '</div>';
         }
-
+        self::$mapCounter += 1;
         return $html;
     }
 
@@ -62,37 +65,37 @@ abstract class EmbedGoogleMapHtmlBuilder {
         $document = JFactory::getDocument();
 
         $document->addScriptDeclaration('
-			jQuery(function($) {
-				// Array for frame sources
-				var sources = [];
+            jQuery(function($) {
+                // Array for frame sources
+                var sources = [];
 
-				$(document).ready(function () {
-					// Loop through all the iframes on the page
-					$("iframe").each(function () {
-						// Get the value of src
-						var src = $(this).attr(\'src\');
-						// Set src to empty
-						$(this).attr(\'src\', \'\');
-						// Store src in the array
-						sources.push(src);
-					});
-				});
+                $(document).ready(function () {
+                    // Loop through all the iframes on the page
+                    $("iframe").each(function () {
+                        // Get the value of src
+                        var src = $(this).attr(\'src\');
+                        // Set src to empty
+                        $(this).attr(\'src\', \'\');
+                        // Store src in the array
+                        sources.push(src);
+                    });
+                });
 
-				$(window).load(function () {
-					function loadGMaps() {
-						var i = 0;
-						// Loop through all the iframes on the page
-						$("iframe").each(function () {
-							// Get src value from the array
-							$(this).attr(\'src\', sources[i]);
-							i++;
-						});
-					}
-					// Set 2 seconds delay for loading Google Maps
-					setTimeout(loadGMaps, ' . $delayMs . ');
-				});
-			});
-		');
+                $(window).load(function () {
+                    function loadGMaps() {
+                        var i = 0;
+                        // Loop through all the iframes on the page
+                        $("iframe").each(function () {
+                            // Get src value from the array
+                            $(this).attr(\'src\', sources[i]);
+                            i++;
+                        });
+                    }
+                    // Set 2 seconds delay for loading Google Maps
+                    setTimeout(loadGMaps, ' . $delayMs . ');
+                });
+            });
+        ');
     }
 
     private function addLoadNoScrollCss() {
@@ -107,16 +110,16 @@ abstract class EmbedGoogleMapHtmlBuilder {
     private function addLoadNoScrollScript() {
         $document = JFactory::getDocument();
         $document->addScriptDeclaration('
-			jQuery(document).ready(function($){
-				$(\'div.embedGoogleMapWrapper\').click(function () {
-					$(\'iframe.embedGoogleMap\').css("pointer-events", "auto");
-				});
+            jQuery(document).ready(function($){
+                $("div[id^=\'embedGoogleMapWrapper-\']").click(function () {
+                    $(this).find(\'iframe.embedGoogleMap\').css("pointer-events", "auto");
+                });
 
-				$(\'div.embedGoogleMapWrapper\').mouseleave(function() {
-					$(\'iframe.embedGoogleMap\').css("pointer-events", "none");
-				});
-			});
-		');
+                $("div[id^=\'embedGoogleMapWrapper-\']").mouseleave(function() {
+                    $(this).find(\'iframe.embedGoogleMap\').css("pointer-events", "none");
+                });
+            });
+        ');
     }
 
 }
