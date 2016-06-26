@@ -14,6 +14,7 @@ abstract class EmbedGoogleMapHtmlBuilder {
     abstract protected function buildHtml(&$params);
 
     public function html(&$params) {
+        $html = $this->buildHtml($params);
         if ($params->getLoadAsync() == 0 && self::$scriptDeclarationAdded == false) {
             $this->addLoadAsyncScript($params->getDelayMs());
             self::$scriptDeclarationAdded = true;
@@ -22,9 +23,10 @@ abstract class EmbedGoogleMapHtmlBuilder {
             $this->addLoadNoScrollCss();
             $this->addLoadNoScrollScript();
             self::$scrollingDeclarationAdded = true;
+            $html = '<div class="embedGoogleMapWrapper">' . $html . '</div>';
         }
 
-        return $this->buildHtml($params);
+        return $html;
     }
 
     protected function getUrl(&$params, $baseUrl) {
@@ -106,11 +108,11 @@ abstract class EmbedGoogleMapHtmlBuilder {
         $document = JFactory::getDocument();
         $document->addScriptDeclaration('
 			jQuery(document).ready(function($){
-				$(\'iframe.embedGoogleMap\').click(function () {
+				$(\'div.embedGoogleMapWrapper\').click(function () {
 					$(\'iframe.embedGoogleMap\').css("pointer-events", "auto");
 				});
 
-				$(\'iframe.embedGoogleMap\').mouseleave(function() {
+				$(\'div.embedGoogleMapWrapper\').mouseleave(function() {
 					$(\'iframe.embedGoogleMap\').css("pointer-events", "none");
 				});
 			});
