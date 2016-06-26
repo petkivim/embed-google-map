@@ -23,7 +23,11 @@ Embed Google Map is a plugin for embedding one or more Google Maps to Joomla art
 * Multilingual features for front-end:
   * Use the system language as Google Map language.
   * Use translatable strings as map label, e.g. {TRANSLATABLE_STRING}.
-* English, French, Italian, Japanese and Finnish language support for back-end.
+* Improve performance by loading Google Maps after the rest of the page has loaded.
+* Disable mouse scrolling on embeded Google Map:
+  * click the map to enable scroll
+  * when mouse leaves the map, disable scroll.
+* English, French, Hungarian, Italian, Japanese and Finnish language support for back-end.
 
 ## Syntax
 
