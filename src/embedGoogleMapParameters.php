@@ -25,8 +25,9 @@ class EmbedGoogleMapParameters {
     private $borderColor = "#000000";
     private $https = 1;
     private $infoLabel = "";
-	private $loadAsync = 1;
-	private $delayMs = 2000;
+    private $loadAsync = 1;
+    private $delayMs = 2000;
+    private $scrolling = 0;
 
     public function setVersion($value) {
         $this->version = $value;
@@ -167,7 +168,7 @@ class EmbedGoogleMapParameters {
     public function getInfoLabel() {
         return $this->infoLabel;
     }
-	
+
     public function setLoadAsync($value) {
         $this->loadAsync = $value;
     }
@@ -175,7 +176,7 @@ class EmbedGoogleMapParameters {
     public function getLoadAsync() {
         return $this->loadAsync;
     }
-	
+
     public function setDelayMs($value) {
         $this->delayMs = $value;
     }
@@ -183,7 +184,15 @@ class EmbedGoogleMapParameters {
     public function getDelayMs() {
         return $this->delayMs;
     }
-	
+
+    public function setScrolling($value) {
+        $this->scrolling = $value;
+    }
+
+    public function getScrolling() {
+        return $this->scrolling;
+    }
+
     public function setIsGoogleMapsEngine($value) {
         $this->isGoogleMapsEngine = $value;
     }

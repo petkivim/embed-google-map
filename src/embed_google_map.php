@@ -48,8 +48,9 @@ class plgContentembed_google_map extends JPlugin {
                 $plgParams->setBorderColor($this->params->def('border_color', '#000000'));
                 $plgParams->setHttps($this->params->def('https', 1));
                 $plgParams->setInfoLabel("");
-				$plgParams->setLoadAsync($this->params->def('load_async', 1));
-				$plgParams->setDelayMs($this->params->def('delay_ms', 2000));
+                $plgParams->setLoadAsync($this->params->def('load_async', 1));
+                $plgParams->setDelayMs($this->params->def('delay_ms', 2000));
+                $plgParams->setScrolling($this->params->def('scrolling', 0));
 
                 $map = $value;
                 $map = str_replace('{google_map}', '', $map);

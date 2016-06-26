@@ -272,7 +272,16 @@
 					min="0"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_DELAY_MS"
 					label="PLG_EMBED_GOOGLE_MAP_LBL_DELAY_MS"
-				/>				
+				/>	
+				
+				<field name="scrolling" type="radio"
+					default="0"
+					description="PLG_EMBED_GOOGLE_MAP_DESC_SCROLLING"
+					label="PLG_EMBED_GOOGLE_MAP_LBL_SCROLLING"
+				>
+					<option value="0">PLG_EMBED_GOOGLE_MAP_SW_YES</option>
+					<option value="1">PLG_EMBED_GOOGLE_MAP_SW_NO</option>
+				</field>				
 			</fieldset>
 		</fields>
 	</config>

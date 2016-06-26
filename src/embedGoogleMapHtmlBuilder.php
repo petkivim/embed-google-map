@@ -8,18 +8,24 @@
  */
 abstract class EmbedGoogleMapHtmlBuilder {
 
-	private static $scriptDeclarationAdded = false;
-	
+    private static $scriptDeclarationAdded = false;
+    private static $scrollingDeclarationAdded = false;
+
     abstract protected function buildHtml(&$params);
-	
-	public function html(&$params) {
-		if ($params->getLoadAsync() == 0 && self::$scriptDeclarationAdded == false) {
-			$this->addLoadAsyncScript($params->getDelayMs());
-			self::$scriptDeclarationAdded = true;
-		}
-		
-		return $this->buildHtml($params);	
-	}
+
+    public function html(&$params) {
+        if ($params->getLoadAsync() == 0 && self::$scriptDeclarationAdded == false) {
+            $this->addLoadAsyncScript($params->getDelayMs());
+            self::$scriptDeclarationAdded = true;
+        }
+        if ($params->getScrolling() == 1 && self::$scrollingDeclarationAdded == false) {
+            $this->addLoadNoScrollCss();
+            $this->addLoadNoScrollScript();
+            self::$scrollingDeclarationAdded = true;
+        }
+
+        return $this->buildHtml($params);
+    }
 
     protected function getUrl(&$params, $baseUrl) {
         $url = "";
@@ -42,17 +48,18 @@ abstract class EmbedGoogleMapHtmlBuilder {
         $width = "width='" . $params->getWidth() . "'";
         $height = "height='" . $params->getHeight() . "'";
         $style = "style='border: " . $params->getBorder() . "px " . $params->getBorderStyle() . " " . $params->getBorderColor() . "'";
-        return "\n<iframe $width $height $style ";
+        $styleClass = "class='embedGoogleMap'";
+        return "\n<iframe $styleClass $width $height $style ";
     }
 
     protected function getLinkHtml($url, $label) {
         return "<div><a href='$url' target='new'>$label</a></div>\n";
     }
 
-	private function addLoadAsyncScript($delayMs) {
-		$document = JFactory::getDocument();
+    private function addLoadAsyncScript($delayMs) {
+        $document = JFactory::getDocument();
 
-		$document->addScriptDeclaration('
+        $document->addScriptDeclaration('
 			jQuery(function($) {
 				// Array for frame sources
 				var sources = [];
@@ -83,8 +90,33 @@ abstract class EmbedGoogleMapHtmlBuilder {
 					setTimeout(loadGMaps, ' . $delayMs . ');
 				});
 			});
-		');		
-	}
+		');
+    }
+
+    private function addLoadNoScrollCss() {
+        $document = JFactory::getDocument();
+        $document->addStyleDeclaration('
+			iframe.embedGoogleMap {
+				pointer-events: none;
+			}
+		');
+    }
+
+    private function addLoadNoScrollScript() {
+        $document = JFactory::getDocument();
+        $document->addScriptDeclaration('
+			jQuery(document).ready(function($){
+				$(\'iframe.embedGoogleMap\').click(function () {
+					$(\'iframe.embedGoogleMap\').css("pointer-events", "auto");
+				});
+
+				$(\'iframe.embedGoogleMap\').mouseleave(function() {
+					$(\'iframe.embedGoogleMap\').css("pointer-events", "none");
+				});
+			});
+		');
+    }
+
 }
 
 ?>
