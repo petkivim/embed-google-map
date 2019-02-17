@@ -18,7 +18,6 @@
 		<filename>embedGoogleMapHtmlBuilder.php</filename>
 		<filename>embedGoogleMapClassicHtmlBuilder.php</filename>
 		<filename>embedGoogleMapNewHtmlBuilder.php</filename>
-    <filename>embedGoogleMapNewV2HtmlBuilder.php</filename>
 		<filename>embedGoogleMapEmbedAPIHtmlBuilder.php</filename>
 		<!-- Other files-->
 		<filename>index.html</filename>
@@ -48,7 +47,6 @@
 					label="PLG_EMBED_GOOGLE_MAP_LBL_VERSION"
 				>
 					<option value="new">Google Maps</option>
-          <option value="newv2">Google Maps v2</option>
 					<option value="classic">Google Maps Classic</option>
 					<option value="embed">Google Maps Embed API</option>
 				</field>

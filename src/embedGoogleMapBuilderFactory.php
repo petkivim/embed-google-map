@@ -6,26 +6,21 @@
  * @copyright	Copyright (C) 2014-2019 Petteri Kivimäki. All rights reserved.
  * @author	Petteri Kivimäki
  */
-require_once __DIR__ . '/embedGoogleMapClassicHtmlBuilder.php';
-require_once __DIR__ . '/embedGoogleMapNewHtmlBuilder.php';
-require_once __DIR__ . '/embedGoogleMapEmbedAPIHtmlBuilder.php';
-require_once __DIR__ . '/embedGoogleMapNewV2HtmlBuilder.php';
-
-class EmbedGoogleMapBuilderFactory {
-
-    public static function createBuilder($version) {
-        if (strcmp($version, 'classic') == 0) {
-            return new EmbedGoogleMapClassicHtmlBuilder;
-        } else if (strcmp($version, 'new') == 0) {
-            return new EmbedGoogleMapNewHtmlBuilder;
-        } else if (strcmp($version, 'embed') == 0) {
-            return new EmbedGoogleMapEmbedAPIHtmlBuilder;
-        } else if (strcmp($version, 'newv2') == 0) {
-            return new EmbedGoogleMapNewV2HtmlBuilder;
-        }
-        return new EmbedGoogleMapNewHtmlBuilder;
-    }
-
-}
+ require_once __DIR__ . '/embedGoogleMapClassicHtmlBuilder.php';
+ require_once __DIR__ . '/embedGoogleMapNewHtmlBuilder.php';
+ require_once __DIR__ . '/embedGoogleMapEmbedAPIHtmlBuilder.php';
+ 
+ class EmbedGoogleMapBuilderFactory {
+     public static function createBuilder($version) {
+         if (strcmp($version, 'classic') == 0) {
+             return new EmbedGoogleMapClassicHtmlBuilder;
+         } else if (strcmp($version, 'new') == 0) {
+             return new EmbedGoogleMapNewHtmlBuilder;
+         } else if (strcmp($version, 'embed') == 0) {
+             return new EmbedGoogleMapEmbedAPIHtmlBuilder;
+         }
+         return new EmbedGoogleMapNewHtmlBuilder;
+     }
+ }
 
 ?>
