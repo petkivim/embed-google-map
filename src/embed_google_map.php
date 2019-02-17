@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.1.0 2019-02-17 09:15 $
+ * @version	$Id: Embed Google Map v2.1.0 2016-06-25 12:06 $
  * @package	Joomla 1.6
- * @copyright	Copyright (C) 2014-2016 Petteri Kivimäki. All rights reserved.
- * @author	Petteri Kivimäki
+ * @copyright	Copyright (C) 2014-2016 Petteri Kivim�ki. All rights reserved.
+ * @author	Petteri Kivim�ki
  */
 defined('_JEXEC') or die('Restricted access');
 
