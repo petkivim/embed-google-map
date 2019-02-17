@@ -112,6 +112,8 @@ Google Maps and Google Maps Classic do not require an API key, but for Google Ma
 * map type (roadmap, satellite)
 * zoom level
 * language
+* add link
+* link label
 * height
 * width
 * border
