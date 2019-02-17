@@ -1,14 +1,15 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.1.0 2016-06-25 12:06 $
+ * @version	$Id: Embed Google Map v2.2.0 2019-02-17 09:34 $
  * @package	Joomla 1.6
- * @copyright	Copyright (C) 2014-2016 Petteri Kivimäki. All rights reserved.
- * @author	Petteri Kivimäki
+ * @copyright	Copyright (C) 2014-2019 Petteri KivimÃ¤ki. All rights reserved.
+ * @author	Petteri KivimÃ¤ki
  */
 require_once __DIR__ . '/embedGoogleMapClassicHtmlBuilder.php';
 require_once __DIR__ . '/embedGoogleMapNewHtmlBuilder.php';
 require_once __DIR__ . '/embedGoogleMapEmbedAPIHtmlBuilder.php';
+require_once __DIR__ . '/embedGoogleMapNewV2HtmlBuilder.php';
 
 class EmbedGoogleMapBuilderFactory {
 
@@ -19,6 +20,8 @@ class EmbedGoogleMapBuilderFactory {
             return new EmbedGoogleMapNewHtmlBuilder;
         } else if (strcmp($version, 'embed') == 0) {
             return new EmbedGoogleMapEmbedAPIHtmlBuilder;
+        } else if (strcmp($version, 'newv2') == 0) {
+            return new EmbedGoogleMapNewV2HtmlBuilder;
         }
         return new EmbedGoogleMapNewHtmlBuilder;
     }

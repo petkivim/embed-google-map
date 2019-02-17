@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.1.0 2016-06-25 12:06 $
+ * @version	$Id: Embed Google Map v2.2.0 2019-02-17 09:34 $
  * @package	Joomla 1.6
- * @copyright	Copyright (C) 2014-2016 Petteri Kivimäki. All rights reserved.
- * @author	Petteri Kivimäki
+ * @copyright	Copyright (C) 2014-2019 Petteri KivimÃ¤ki. All rights reserved.
+ * @author	Petteri KivimÃ¤ki
  */
 require_once __DIR__ . '/embedGoogleMapHtmlBuilder.php';
 
@@ -34,7 +34,7 @@ class EmbedGoogleMapClassicHtmlBuilder extends EmbedGoogleMapHtmlBuilder {
 
             $info = ($params->getShowInfo() == 0) ? "" : "&iwloc=near";
 
-            // Unicode properties are available only if PCRE is compiled with "--enable-unicode-properties" 
+            // Unicode properties are available only if PCRE is compiled with "--enable-unicode-properties"
             // '\pL' = any Unicode letter
             if (preg_match('/^[^\pL]+$/u', $params->getAddress())) {
                 $info = ($params->getShowInfo() == 0) ? "&iwloc=near" : "";
