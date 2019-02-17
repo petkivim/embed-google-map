@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.1.0 2016-06-25 12:06 $
+ * @version	$Id: Embed Google Map v2.1.0 2019-02-17 09:15 $
  * @package	Joomla 1.6
- * @copyright	Copyright (C) 2014-2016 Petteri Kivimäki. All rights reserved.
- * @author	Petteri Kivimäki
+ * @copyright	Copyright (C) 2014-2016 Petteri KivimÃ¤ki. All rights reserved.
+ * @author	Petteri KivimÃ¤ki
  */
 defined('_JEXEC') or die('Restricted access');
 
@@ -16,7 +16,7 @@ require_once __DIR__ . '/embedGoogleMapParser.php';
 
 class plgContentembed_google_map extends JPlugin {
 
-    function __construct(&$subject, $params) {
+    function __construct(& $subject, $params) {
         parent::__construct($subject, $params);
     }
 
@@ -31,7 +31,7 @@ class plgContentembed_google_map extends JPlugin {
             foreach ($matches[0] as $value) {
                 // Plugin params
                 $plgParams = new EmbedGoogleMapParameters;
-                // Load plugin params		
+                // Load plugin params
                 $plgParams->setVersion($this->params->def('version', 'new'));
                 $plgParams->setEmbedAPIKey($this->params->def('embed_api_key', ''));
                 $plgParams->setMapType($this->params->def('map_type', 'm'));
