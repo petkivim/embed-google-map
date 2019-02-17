@@ -18,7 +18,7 @@ class EmbedGoogleMapEmbedAPIHtmlBuilder extends EmbedGoogleMapHtmlBuilder {
         $html = parent::getIFrameBegin($params);
 
         if ($params->isLink() == 1) {
-            $url .= "place?q=" . urlencode($params->getAddress());
+            $url .= "place?q=" . $params->getAddress();
             $url .= "&zoom=" . $params->getZoomLevel();
             $url .= "&maptype=" . $this->getMapType($params->getMapType());
             if (strcmp($params->getLanguage(), '-') != 0) {
