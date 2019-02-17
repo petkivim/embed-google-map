@@ -1,14 +1,15 @@
 # Embed Google Map
 
-Embed Google Map is a plugin for embedding one or more Google Maps to Joomla articles. Adding maps to an article is very simple, just add the address or the coordinates which location you want to show an a map inside google_maps tags to an article, and that's it! It's also possible to define the version of Google Maps (Google Maps, Google Maps Classic, Google Maps Embed API),  the type of the map (normal, satellite, hybrid, terrain), the size of the map, the language of the Google Maps interface, zoom level, border layout and link to the full size map. Embedding maps created in Google Maps Engine is supported as well.
+Embed Google Map is a plugin for embedding one or more Google Maps to Joomla articles. Adding maps to an article is very simple, just add the address or the coordinates which location you want to show an a map inside google_maps tags to an article, and that's it! It's also possible to define the version of Google Maps (Google Maps, Google Maps v2, Google Maps Classic, Google Maps Embed API), the type of the map (normal, satellite, hybrid, terrain), the size of the map, the language of the Google Maps interface, zoom level, border layout and link to the full size map. Embedding maps created in Google Maps Engine is supported as well.
 
 ## Features
 
 * It's possible to embed one or more Google Maps within an artice.
 * The address or the coordinates which location is shown on a map is given as a parameter.
-* Define Google Maps version to be used: Google Maps (no API key), Google Maps Classic (no API key), Google Maps Embed API ([API key](https://developers.google.com/maps/documentation/embed/guide#api_key) required)
+* Define Google Maps version to be used: Google Maps (no API key), Google Maps v2 ([API key](https://developers.google.com/maps/documentation/embed/get-api-key) required), Google Maps Classic (no API key), Google Maps Embed API ([API key](https://developers.google.com/maps/documentation/embed/guide#api_key) required)
 * Define the type of the map.
   * Google Maps, Google Maps Embed API: normal, satellite
+  * Google Maps v2: roadmap (default), satellite
   * Google Maps Classic: normal, satellite, hybrid, terrain
 * Define the size of the map.
 * Define the language of the Google Maps interface. List of language codes.
@@ -65,15 +66,16 @@ Replace the "latitude" and "longitude" strings with the coordinates which locati
 
 ## Version
 
-The plugin supports Google Maps, Google Maps Classic and Google Maps Embed API. The version to be used can be set by using the Version setting (supported values: new, classic, embed). The default version is defined in the Backend, but it can be overridden for individual maps.
+The plugin supports Google Maps, Google Maps v2, Google Maps Classic and Google Maps Embed API. The version to be used can be set by using the Version setting (supported values: new, newv2, classic, embed). The default version is defined in the Backend, but it can be overridden for individual maps.
 
 ```
 {google_map}address|version:new{/google_map}
+{google_map}address|version:newv2{/google_map}
 {google_map}address|version:classic{/google_map}
 {google_map}address|version:embed{/google_map}
 ```
 
-Google Maps and Google Maps Classic do not require an API key, but for Google Maps Embed API an [API key](https://developers.google.com/maps/documentation/embed/guide#api_key) is required instead. Not all the parameters are supported by all the versions. Please see the supported parameters below.
+Google Maps and Google Maps Classic do not require an API key. For Google Maps Embed API an [API key](https://developers.google.com/maps/documentation/embed/guide#api_key) is required, and for Google Maps v2 an [API key](https://developers.google.com/maps/documentation/embed/get-api-key) is required. Not all the parameters are supported by all the versions. Please see the supported parameters below.
 
 **Google Maps**
 
@@ -89,7 +91,21 @@ Google Maps and Google Maps Classic do not require an API key, but for Google Ma
 * border color
 * HTTPS
 
-**Google Maps Classic**
+**Google Maps v2**
+
+* map type (roadmap, satellite)
+* zoom level
+* language - By default, visitors will see a map in their own language which is defined by the locale of their browser. The setting takes effect only when a map is opened through the additional link to Google Maps
+* add link
+* link label
+* height
+* width
+* border
+* border style
+* border color
+* HTTPS
+
+**Google Maps Classic (deprecated)**
 
 * map type (normal, satellite, hybrid, terrain)
 * zoom level
@@ -120,7 +136,7 @@ Google Maps and Google Maps Classic do not require an API key, but for Google Ma
 
 ## Multilingual features
 
-This plugin supports English, French, Italian, Japanese and Finnish languages for back-end.
+This plugin supports English, French, Italian, Japanese, Hungarian and Finnish languages for back-end.
 
 In the front-end it's possible to use the system language as a Google Map language. In multilingual sites this means that it's enough to set the default language to 'system', and the language of the map is set according to the language that the user has chosen. For individual maps the default setting can be overridden by using the 'lang' parameter. Setting the system language for individual maps can be done by setting the 'lang' parameter to 'system'
 

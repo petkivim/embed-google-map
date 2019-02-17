@@ -23,23 +23,23 @@ class EmbedGoogleMapNewV2HtmlBuilder extends EmbedGoogleMapHtmlBuilder {
 
         if ($params->isGoogleMapsEngine() == 1) {
             $url .= "&zoom=" . $params->getZoomLevel();
-
-             $url .= "&maptype=" . $this->getMapType($params->getMapType());
-         /*  if (strcmp($params->getLanguage(), '-') != 0) {
-                $url .= "&hl=" . $params->getLanguage();
-            }*/
+            $url .= "&maptype=" . $this->getMapType($params->getMapType());
+            if (strcmp($params->getLanguage(), '-') != 0) {
+                $url .= "&language=" . $params->getLanguage();
+            }
         }
-        $url .= "&key=" . $params->getEmbedAPIKey();
-        $html .= "src='$url' allowfullscreen ></iframe>\n";
+        $key = "&key=" . $params->getEmbedAPIKey();
+        $html .= "src='$url$key' allowfullscreen ></iframe>\n";
 
-       /* if ($params->getAddLink() == 0) {
+       if ($params->getAddLink() == 0) {
             if ($params->isGoogleMapsEngine() == 0) {
                 $url = str_replace('/embed', '/viewer', $url);
             } else if ($params->isLink() == 1) {
-                $url = str_replace('/maps', '/maps/preview', $url);
+                $url = str_replace('/maps/embed/v1', '/maps', $url);
+                $url = str_replace('language=', 'hl=', $url);
             }
             $html .= parent::getLinkHtml($url, $params->getLinkLabel());
-        }*/
+        }
         return $html;
     }
 
