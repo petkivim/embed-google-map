@@ -18,18 +18,20 @@ class EmbedGoogleMapEmbedAPIHtmlBuilder extends EmbedGoogleMapHtmlBuilder {
         $html = parent::getIFrameBegin($params);
 
         if ($params->isLink() == 1) {
-            $url .= "place?q=" . $params->getAddress();
-        }
-
-        if ($params->isGoogleMapsEngine() == 1) {
+            $url .= "place?q=" . urlencode($params->getAddress());
             $url .= "&zoom=" . $params->getZoomLevel();
             $url .= "&maptype=" . $this->getMapType($params->getMapType());
             if (strcmp($params->getLanguage(), '-') != 0) {
                 $url .= "&language=" . $params->getLanguage();
             }
         }
+        
         $key = "&key=" . $params->getEmbedAPIKey();
-        $html .= "src='$url$key' allowfullscreen ></iframe>\n";
+        if ($params->isLink() == 0 && $params->isGoogleMapsEngine() == 1) {
+          $html .= "src='$url$key&output=embed' allowfullscreen ></iframe>\n";
+        } else {
+          $html .= "src='$url$key' allowfullscreen ></iframe>\n";
+        }
 
        if ($params->getAddLink() == 0) {
             if ($params->isGoogleMapsEngine() == 0) {
