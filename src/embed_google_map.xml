@@ -2,8 +2,8 @@
 <extension version="1.6" type="plugin" group="content" method="upgrade">
     <name>PLG_EMBED_GOOGLE_MAP</name>
     <author>Petteri Kivimäki</author>
-    <creationDate>25 June 2016</creationDate>
-    <copyright>(C)2012-2016 Petteri Kivimäki</copyright>
+    <creationDate>17 February 2019</creationDate>
+    <copyright>(C)2012-2019 Petteri Kivimäki</copyright>
     <license>http://www.gnu.org/copyright/gpl.html GNU/GPL</license>
     <authorEmail>dinky_jackson@hotmail.com</authorEmail>
     <version>2.2.0</version>
@@ -18,7 +18,7 @@
 		<filename>embedGoogleMapHtmlBuilder.php</filename>
 		<filename>embedGoogleMapClassicHtmlBuilder.php</filename>
 		<filename>embedGoogleMapNewHtmlBuilder.php</filename>
-          <filename>embedGoogleMapNewV2HtmlBuilder.php</filename>
+    <filename>embedGoogleMapNewV2HtmlBuilder.php</filename>
 		<filename>embedGoogleMapEmbedAPIHtmlBuilder.php</filename>
 		<!-- Other files-->
 		<filename>index.html</filename>
@@ -36,7 +36,7 @@
 		<language tag="ja-JP">ja-JP.plg_content_embed_google_map.ini</language>
 		<language tag="ja-JP">ja-JP.plg_content_embed_google_map.sys.ini</language>
 		<language tag="hu-HU">hu-HU.plg_content_embed_google_map.ini</language>
-		<language tag="hu-HU">hu-HU.plg_content_embed_google_map.sys.ini</language>		
+		<language tag="hu-HU">hu-HU.plg_content_embed_google_map.sys.ini</language>
 	</languages>
     <config>
 		<fields name="params">
@@ -48,11 +48,11 @@
 					label="PLG_EMBED_GOOGLE_MAP_LBL_VERSION"
 				>
 					<option value="new">Google Maps</option>
-                         <option value="newv2">Google Maps v2</option>
+          <option value="newv2">Google Maps v2</option>
 					<option value="classic">Google Maps Classic</option>
 					<option value="embed">Google Maps Embed API</option>
 				</field>
-				
+
 				<field name="map_type" type="list"
 					default="m"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_MAP_TYPE"
@@ -63,7 +63,7 @@
 					<option value="h">Hybrid</option>
 					<option value="p">Terrain</option>
 				</field>
-				
+
 				<field name="zoom" type="list"
 					default="14"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_ZOOM"
@@ -92,7 +92,7 @@
 					<option value="20">20</option>
 					<option value="21">21</option>
 				</field>
-				
+
 				<field name="language" type="list"
 					default="-"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_LANG"
@@ -103,10 +103,10 @@
 					<option value="ar">Arabic</option>
 					<option value="eu">Basque</option>
 					<option value="bn">Bengali</option>
-					<option value="bg">Bulgarian</option>					
+					<option value="bg">Bulgarian</option>
 					<option value="ca">Catalan</option>
 					<option value="zh-CN">Chinese (simplified)</option>
-					<option value="zh-TW">Chinese (traditional)</option>					
+					<option value="zh-TW">Chinese (traditional)</option>
 					<option value="hr">Croatian</option>
 					<option value="cs">Czech</option>
 					<option value="da">Danish</option>
@@ -116,33 +116,33 @@
 					<option value="en-GB">English (Great Britain)</option>
 					<option value="fa">Farsi</option>
 					<option value="fil">Filipino</option>
-					<option value="fi">Finnish</option>					
+					<option value="fi">Finnish</option>
 					<option value="fr">French</option>
 					<option value="gl">Galician</option>
-					<option value="de">German</option>									
-					<option value="el">Greek</option>	
-					<option value="gu">Gujarati</option>					
+					<option value="de">German</option>
+					<option value="el">Greek</option>
+					<option value="gu">Gujarati</option>
 					<option value="iw">Hebrew</option>
 					<option value="hi">Hindi</option>
 					<option value="hu">Hungarian</option>
 					<option value="id">Indonesian</option>
-					<option value="it">Italian</option>					
+					<option value="it">Italian</option>
 					<option value="ja">Japanese</option>
 					<option value="kn">Kannada</option>
 					<option value="ko">Korean</option>
 					<option value="lv">Latvian</option>
-					<option value="lt">Lithuanian</option>					
-					<option value="ml">Malayalam</option>				
+					<option value="lt">Lithuanian</option>
+					<option value="ml">Malayalam</option>
 					<option value="mr">Marathi</option>
 					<option value="no">Norwegian</option>
-					<option value="nn">Norwegian Nynorsk</option>					
+					<option value="nn">Norwegian Nynorsk</option>
 					<option value="or">Oriya</option>
 					<option value="pl">Polish</option>
 					<option value="pt">Portuguese</option>
 					<option value="pt-BR">Portuguese (Brazil)</option>
 					<option value="pt-PT">Portuguese (Portugal)</option>
 					<option value="ro">Romanian</option>
-					<option value="rm">Romansch</option>					
+					<option value="rm">Romansch</option>
 					<option value="ru">Russian</option>
 					<option value="sk">Slovak</option>
 					<option value="sl">Slovenian</option>
@@ -157,7 +157,7 @@
 					<option value="uk">Ukrainian</option>
 					<option value="vi">Vietnamese</option>
 				</field>
-							
+
 				<field name="add_link" type="radio"
 					default="1"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_ADD_LINK"
@@ -166,14 +166,14 @@
 					<option value="0">PLG_EMBED_GOOGLE_MAP_SW_YES</option>
 					<option value="1">PLG_EMBED_GOOGLE_MAP_SW_NO</option>
 				</field>
-				
+
 				<field name="link_label" type="text"
 					default="View Larger Map"
 					size="60"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_LINK_LABEL"
 					label="PLG_EMBED_GOOGLE_MAP_LBL_LINK_LABEL"
 				/>
-				
+
 				<field name="link_full" type="radio"
 					default="1"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_LINK_FULL"
@@ -182,7 +182,7 @@
 					<option value="0">PLG_EMBED_GOOGLE_MAP_SW_YES</option>
 					<option value="1">PLG_EMBED_GOOGLE_MAP_SW_NO</option>
 				</field>
-				
+
 				<field name="show_info" type="radio"
 					default="0"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_SHOW_INFO"
@@ -191,26 +191,26 @@
 					<option value="0">PLG_EMBED_GOOGLE_MAP_SW_YES</option>
 					<option value="1">PLG_EMBED_GOOGLE_MAP_SW_NO</option>
 				</field>
-				
+
 				<field name="height" type="text"
 					default="400"
 					size="6"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_HEIGHT"
 					label="PLG_EMBED_GOOGLE_MAP_LBL_HEIGHT"
-				/>				
-				
+				/>
+
 				<field name="width" type="text"
 					default="300"
 					size="6"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_WIDTH"
 					label="PLG_EMBED_GOOGLE_MAP_LBL_WIDTH"
 				/>
-				
+
 				<field name="border" type="list"
 					default="0"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_BORDER"
 					label="PLG_EMBED_GOOGLE_MAP_LBL_BORDER"
-				>	
+				>
 					<option value="0">0</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -223,27 +223,27 @@
 					<option value="9">9</option>
 					<option value="10">10</option>
 				</field>
-			
+
 				<field name="border_style" type="list"
 					default="solid"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_BORDER_STYLE"
 					label="PLG_EMBED_GOOGLE_MAP_LBL_BORDER_STYLE"
-				>	
+				>
 					<option value="none">none</option>
 					<option value="hidden">hidden</option>
 					<option value="dotted">dotted</option>
 					<option value="dashed">dashed</option>
 					<option value="solid">solid</option>
 					<option value="double">double</option>
-				</field>	
-				
+				</field>
+
 				<field name="border_color" type="text"
 					default="#000000"
 					size="7"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_BORDER_COLOR"
 					label="PLG_EMBED_GOOGLE_MAP_LBL_BORDER_COLOR"
 				/>
-				
+
 				<field name="https" type="radio"
 					default="1"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_HTTPS"
@@ -252,14 +252,14 @@
 					<option value="0">PLG_EMBED_GOOGLE_MAP_SW_YES</option>
 					<option value="1">PLG_EMBED_GOOGLE_MAP_SW_NO</option>
 				</field>
-				
+
 				<field name="embed_api_key" type="text"
 					default=""
 					size="60"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_EMBED_API_KEY"
 					label="PLG_EMBED_GOOGLE_MAP_LBL_EMBED_API_KEY"
 				/>
-				
+
 				<field name="load_async" type="radio"
 					default="1"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_LOAD_ASYNC"
@@ -268,14 +268,14 @@
 					<option value="0">PLG_EMBED_GOOGLE_MAP_SW_YES</option>
 					<option value="1">PLG_EMBED_GOOGLE_MAP_SW_NO</option>
 				</field>
-				
+
 				<field name="delay_ms" type="number"
 					default="2000"
 					min="0"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_DELAY_MS"
 					label="PLG_EMBED_GOOGLE_MAP_LBL_DELAY_MS"
-				/>	
-				
+				/>
+
 				<field name="scrolling" type="radio"
 					default="0"
 					description="PLG_EMBED_GOOGLE_MAP_DESC_SCROLLING"
@@ -283,7 +283,7 @@
 				>
 					<option value="0">PLG_EMBED_GOOGLE_MAP_SW_YES</option>
 					<option value="1">PLG_EMBED_GOOGLE_MAP_SW_NO</option>
-				</field>				
+				</field>
 			</fieldset>
 		</fields>
 	</config>

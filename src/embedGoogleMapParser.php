@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.1.0 2016-06-25 12:06 $
+ * @version	$Id: Embed Google Map v2.2.0 2019-02-17 09:34 $
  * @package	Joomla 1.6
- * @copyright	Copyright (C) 2014-2016 Petteri Kivimäki. All rights reserved.
- * @author	Petteri Kivimäki
+ * @copyright	Copyright (C) 2014-2019 Petteri KivimÃ¤ki. All rights reserved.
+ * @author	Petteri KivimÃ¤ki
  */
 class EmbedGoogleMapParser {
 
@@ -22,6 +22,8 @@ class EmbedGoogleMapParser {
                     $params->setVersion("classic");
                 } else if (strcmp(strtolower($tmp1), 'embed') == 0) {
                     $params->setVersion("embed");
+                } else if (strcmp(strtolower($tmp1), 'newv2') == 0) {
+                    $params->setVersion("newv2");
                 }
             }
 
