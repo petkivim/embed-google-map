@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.1.1 2019-02-17 09:34 $
+ * @version	$Id: Embed Google Map v2.1.2 2019-03-10 12:48 $
  * @package	Joomla 1.6
  * @copyright	Copyright (C) 2014-2019 Petteri Kivimäki. All rights reserved.
  * @author	Petteri Kivimäki
@@ -71,7 +71,7 @@ abstract class EmbedGoogleMapHtmlBuilder {
 
                 $(document).ready(function () {
                     // Loop through all the iframes on the page
-                    $("iframe").each(function () {
+                    $("iframe.embedGoogleMap").each(function () {
                         // Get the value of src
                         var src = $(this).attr(\'src\');
                         // Set src to empty
@@ -85,13 +85,13 @@ abstract class EmbedGoogleMapHtmlBuilder {
                     function loadGMaps() {
                         var i = 0;
                         // Loop through all the iframes on the page
-                        $("iframe").each(function () {
+                        $("iframe.embedGoogleMap").each(function () {
                             // Get src value from the array
                             $(this).attr(\'src\', sources[i]);
                             i++;
                         });
                     }
-                    // Set 2 seconds delay for loading Google Maps
+                    // Set delay for loading Google Maps
                     setTimeout(loadGMaps, ' . $delayMs . ');
                 });
             });
