@@ -18,7 +18,7 @@ Embed Google Map is a plugin for embedding one or more Google Maps to Joomla art
 * Hide/show the info label. Supported by Google Maps Classic only.
 * Define the border width, border style and border color.
 * Add link to the full size map. Supported by Google Maps and Google Maps Classic only.
-* Define the link label and location (above or below the map). Supported by Google Maps and Google Maps Classic only.
+* Define the link label and link position (above or below the map). Supported by Google Maps and Google Maps Classic only.
 * Support for HTTP and HTTPS.
 * Embed maps created in Google Maps Engine.
 * Multilingual features for front-end:
