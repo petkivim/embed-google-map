@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.2.0 - 2019-08-17
+- Add link position parameter.
+
 ## 2.1.2 - 2019-03-10
 - Fix compatibility issue with Google Recaptcha when asynchronous loading of
 Google Maps is enabled (#62).

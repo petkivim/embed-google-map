@@ -18,7 +18,7 @@ Embed Google Map is a plugin for embedding one or more Google Maps to Joomla art
 * Hide/show the info label. Supported by Google Maps Classic only.
 * Define the border width, border style and border color.
 * Add link to the full size map. Supported by Google Maps and Google Maps Classic only.
-* Define the link label. Supported by Google Maps and Google Maps Classic only.
+* Define the link label and location (above or below the map). Supported by Google Maps and Google Maps Classic only.
 * Support for HTTP and HTTPS.
 * Embed maps created in Google Maps Engine.
 * Multilingual features for front-end:
@@ -38,7 +38,7 @@ Embed Google Map is a plugin for embedding one or more Google Maps to Joomla art
 * {google_map}address|zoom:10|lang:it{/google_map}
 * {google_map}address|lang:system{/google_map}
 * {google_map}address|width:200|height:200|border:1|border_style:solid|border_color:#000000{/google_map}
-* {google_map}address|width:200|height:200|link:yes|link_label:Label{/google_map}
+* {google_map}address|width:200|height:200|link:yes|link_label:Label|link_position:top{/google_map}
 * {google_map}address|link:yes{/google_map}
 * {google_map}address|type:satellite{/google_map}
 * {google_map}address|show_info:yes|info_label:Label{/google_map}
@@ -82,6 +82,7 @@ Google Maps and Google Maps Classic do not require an API key, but for Google Ma
 * zoom level
 * language - By default, visitors will see a map in their own language which is defined by the locale of their browser. The setting takes effect only when a map is opened through the additional link to Google Maps
 * add link
+* link position
 * link label
 * height
 * width
@@ -96,6 +97,7 @@ Google Maps and Google Maps Classic do not require an API key, but for Google Ma
 * zoom level
 * language
 * add link
+* link position
 * link label
 * link to full screen
 * show info

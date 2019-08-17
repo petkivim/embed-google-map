@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.1.2 2019-03-10 12:48 $
+ * @version	$Id: Embed Google Map v2.1.2 2019-08-17 08:50 $
  * @package	Joomla 1.6
  * @copyright	Copyright (C) 2014-2019 Petteri Kivimäki. All rights reserved.
  * @author	Petteri Kivimäki
@@ -15,6 +15,7 @@ class EmbedGoogleMapParameters {
     private $zoomLevel = 14;
     private $language = "en";
     private $addLink = 1;
+    private $linkPosition = "bottom";
     private $linkLabel = "";
     private $linkFull = 1;
     private $showInfo = 0;
@@ -87,6 +88,14 @@ class EmbedGoogleMapParameters {
 
     public function getAddLink() {
         return $this->addLink;
+    }
+
+    public function setLinkPosition($value) {
+        $this->linkPosition = $value;
+    }
+
+    public function getLinkPosition() {
+        return $this->linkPosition;
     }
 
     public function setLinkLabel($value) {
@@ -219,6 +228,7 @@ class EmbedGoogleMapParameters {
         $str .= "zoomLevel:\t\t$this->zoomLevel\n";
         $str .= "language:\t\t\"$this->language\"\n";
         $str .= "addLink:\t\t$this->addLink\n";
+        $str .= "linkPosition:\t\t$this->linkPosition\n";
         $str .= "linkLabel:\t\t\"$this->linkLabel\"\n";
         $str .= "linkFull:\t\t$this->linkFull\n";
         $str .= "showInfo:\t\t$this->showInfo\n";

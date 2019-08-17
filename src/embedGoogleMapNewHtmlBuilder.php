@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.1.2 2019-03-10 12:48 $
+ * @version	$Id: Embed Google Map v2.2.0 2019-08-17 09:10 $
  * @package	Joomla 1.6
  * @copyright	Copyright (C) 2014-2019 Petteri Kivimäki. All rights reserved.
  * @author	Petteri Kivimäki
@@ -36,7 +36,7 @@ class EmbedGoogleMapNewHtmlBuilder extends EmbedGoogleMapHtmlBuilder {
             } else if ($params->isLink() == 1) {
                 $url = str_replace('/maps', '/maps/preview', $url);
             }
-            $html .= parent::getLinkHtml($url, $params->getLinkLabel());
+            $html = parent::addLinkToHtml($html, $url, $params->getLinkLabel(), $params->getLinkPosition());
         }
         return $html;
     }

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.1.2 2019-03-10 12:48 $
+ * @version	$Id: Embed Google Map v2.2.0 2019-08-17 09:10 $
  * @package	Joomla 1.6
  * @copyright	Copyright (C) 2014-2019 Petteri Kivimäki. All rights reserved.
  * @author	Petteri Kivimäki
@@ -59,6 +59,15 @@
                      $params->setAddLink(0);
                  } else {
                      $params->setAddLink(1);
+                 }
+             }
+             if (strstr(strtolower($phrase), 'link_position:')) {
+                 $tpm1 = explode(':', $phrase);
+                 $tmp1 = trim($tpm1[1], '"');
+                 if (strcmp(strtolower($tmp1), 'top') == 0) {
+                     $params->setLinkPosition("top");
+                 } else {
+                     $params->setLinkPosition("bottom");
                  }
              }
              if (strstr(strtolower($phrase), 'link_label:')) {

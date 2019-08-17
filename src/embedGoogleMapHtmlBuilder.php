@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.1.2 2019-03-10 12:48 $
+ * @version	$Id: Embed Google Map v2.2.0 2019-08-17 09:10 $
  * @package	Joomla 1.6
  * @copyright	Copyright (C) 2014-2019 Petteri Kivimäki. All rights reserved.
  * @author	Petteri Kivimäki
@@ -59,6 +59,11 @@ abstract class EmbedGoogleMapHtmlBuilder {
 
     protected function getLinkHtml($url, $label) {
         return "<div><a href='$url' target='new'>$label</a></div>\n";
+    }
+
+    protected function addLinkToHtml($html, $url, $label, $linkPosition) {
+        $linkHtml = $this->getLinkHtml($url, $label);
+        return strcmp(strtolower($linkPosition), 'top') === 0 ? $linkHtml . $html : $html . $linkHtml;
     }
 
     private function addLoadAsyncScript($delayMs) {
