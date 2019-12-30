@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.2.0 2019-08-17 09:10 $
+ * @version	$Id: Embed Google Map v2.3.0 2019-12-30 11:19 $
  * @package	Joomla 1.6
  * @copyright	Copyright (C) 2014-2019 Petteri Kivimäki. All rights reserved.
  * @author	Petteri Kivimäki
@@ -41,6 +41,7 @@ class plgContentembed_google_map extends JPlugin {
                 $plgParams->setLinkPosition($this->params->def('link_position', 'bottom'));
                 $plgParams->setLinkLabel($this->params->def('link_label', 'View Larger Map'));
                 $plgParams->setLinkFull($this->params->def('link_full', 1));
+                $plgParams->setTitle($this->params->def('title', 'A map by Google Maps'));
                 $plgParams->setShowInfo($this->params->def('show_info', 0));
                 $plgParams->setHeight($this->params->def('height', 300));
                 $plgParams->setWidth($this->params->def('width', 400));

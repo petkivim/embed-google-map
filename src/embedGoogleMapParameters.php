@@ -29,6 +29,7 @@ class EmbedGoogleMapParameters {
     private $loadAsync = 1;
     private $delayMs = 2000;
     private $scrolling = 0;
+    private $title = "";
 
     public function setVersion($value) {
         $this->version = $value;
@@ -202,6 +203,14 @@ class EmbedGoogleMapParameters {
         return $this->scrolling;
     }
 
+    public function setTitle($value) {
+        $this->title = $value;
+    }
+
+    public function getTitle() {
+        return $this->title;
+    }
+
     public function setIsGoogleMapsEngine($value) {
         $this->isGoogleMapsEngine = $value;
     }
@@ -232,6 +241,7 @@ class EmbedGoogleMapParameters {
         $str .= "linkLabel:\t\t\"$this->linkLabel\"\n";
         $str .= "linkFull:\t\t$this->linkFull\n";
         $str .= "showInfo:\t\t$this->showInfo\n";
+        $str .= "title:\t\t$this->title\n";
         $str .= "height:\t\t\t$this->height\n";
         $str .= "width:\t\t\t$this->width\n";
         $str .= "border:\t\t\t$this->border\n";

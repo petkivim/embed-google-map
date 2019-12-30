@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.2.0 2019-08-17 09:10 $
+ * @version	$Id: Embed Google Map v2.3.0 2019-12-30 11:19 $
  * @package	Joomla 1.6
  * @copyright	Copyright (C) 2014-2019 Petteri Kivimäki. All rights reserved.
  * @author	Petteri Kivimäki
@@ -117,6 +117,10 @@
              if (strstr(strtolower($phrase), 'info_label:')) {
                  $tpm1 = explode(':', $phrase);
                  $params->setInfoLabel(trim($tpm1[1], '"'));
+             }
+             if (strstr(strtolower($phrase), 'title:')) {
+                 $tpm1 = explode(':', $phrase);
+                 $params->setTitle(trim($tpm1[1], '"'));
              }
          }
      }
