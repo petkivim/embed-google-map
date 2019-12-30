@@ -1,8 +1,8 @@
 # Changelog
 
 ## 2.3.0 - 2019-12-30
-- Add title parameter.
-  - Can be used to define the `title` attribute of the map's `iframe`. 
+- Add title parameter (#70).
+  - Can be used to define the `title` attribute of the map's `iframe`.
 
 ## 2.2.0 - 2019-08-17
 - Add link position parameter.
