@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.3.0 2019-12-30 11:19 $
+ * @version	$Id: Embed Google Map v2.3.1 2022-07-21 16:23 $
  * @package	Joomla 1.6
- * @copyright	Copyright (C) 2014-2019 Petteri Kivimäki. All rights reserved.
+ * @copyright	Copyright (C) 2014-2022 Petteri Kivimäki. All rights reserved.
  * @author	Petteri Kivimäki
  */
  require_once __DIR__ . '/embedGoogleMapClassicHtmlBuilder.php';

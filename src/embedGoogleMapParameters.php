@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @version	$Id: Embed Google Map v2.1.2 2019-08-17 08:50 $
+ * @version	$Id: Embed Google Map v2.3.1 2022-07-21 16:23 $
  * @package	Joomla 1.6
- * @copyright	Copyright (C) 2014-2019 Petteri Kivimäki. All rights reserved.
+ * @copyright	Copyright (C) 2014-2022 Petteri Kivimäki. All rights reserved.
  * @author	Petteri Kivimäki
  */
 class EmbedGoogleMapParameters {
