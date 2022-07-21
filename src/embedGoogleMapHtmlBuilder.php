@@ -87,7 +87,7 @@ abstract class EmbedGoogleMapHtmlBuilder {
                     });
                 });
 
-                $(window).load(function () {
+                $(window).on("load", function () {
                     function loadGMaps() {
                         var i = 0;
                         // Loop through all the iframes on the page

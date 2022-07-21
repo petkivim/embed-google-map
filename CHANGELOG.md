@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.3.1 - 2022-07-21
+- Fix uncaught JavaScript TypeError (#85).
+
 ## 2.3.0 - 2019-12-30
 - Add title parameter (#70).
   - Can be used to define the `title` attribute of the map's `iframe`.
