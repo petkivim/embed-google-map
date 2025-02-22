@@ -28,7 +28,6 @@ class EmbedGoogleMap extends CMSPlugin implements SubscriberInterface {
                 ];
     }
 
-    //function onContentPrepare($context, &$row, &$params, $limitstart) {
     function onContentPrepare(Event $event) {
         if (!$this->getApplication()->isClient('site')) {
             return;
