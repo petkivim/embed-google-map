@@ -1,12 +1,12 @@
 <?php
+namespace Joomla\Plugin\Content\EmbedGoogleMap\Extension;
 
 /**
- * @version	$Id: Embed Google Map v2.3.1 2022-07-21 16:23 $
- * @package	Joomla 1.6
- * @copyright	Copyright (C) 2014-2022 Petteri Kivimäki. All rights reserved.
- * @author	Petteri Kivimäki
+ * @copyright   Copyright (C) 2014-2025 Petteri Kivimäki. All rights reserved.
+ * @license     GNU General Public License version 3; see LICENSE
+ * @author      Petteri Kivimäki
  */
-require_once __DIR__ . '/embedGoogleMapHtmlBuilder.php';
+require_once __DIR__ . '/EmbedGoogleMapHtmlBuilder.php';
 
 class EmbedGoogleMapClassicHtmlBuilder extends EmbedGoogleMapHtmlBuilder {
 

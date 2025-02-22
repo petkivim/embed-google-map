@@ -1,27 +1,43 @@
 <?php
+namespace Joomla\Plugin\Content\EmbedGoogleMap\Extension;
 
 /**
- * @version	$Id: Embed Google Map v2.3.1 2022-07-21 16:23 $
- * @package	Joomla 1.6
- * @copyright	Copyright (C) 2014-2022 Petteri Kivimäki. All rights reserved.
- * @author	Petteri Kivimäki
+ * @copyright   Copyright (C) 2014-2025 Petteri Kivimäki. All rights reserved.
+ * @license     GNU General Public License version 3; see LICENSE
+ * @author      Petteri Kivimäki
  */
 defined('_JEXEC') or die('Restricted access');
 
-jimport('joomla.plugin.plugin');
+use Joomla\CMS\Plugin\CMSPlugin;
+use Joomla\Event\Event;
+use Joomla\Event\SubscriberInterface;
+use Joomla\CMS\Factory;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Event\Result\ResultAwareInterface;
 
-require_once __DIR__ . '/embedGoogleMapParameters.php';
-require_once __DIR__ . '/embedGoogleMapBuilderFactory.php';
-require_once __DIR__ . '/embedGoogleMapParser.php';
+require_once __DIR__ . '/EmbedGoogleMapParameters.php';
+require_once __DIR__ . '/EmbedGoogleMapBuilderFactory.php';
+require_once __DIR__ . '/EmbedGoogleMapParser.php';
 
-class plgContentembed_google_map extends JPlugin {
+class EmbedGoogleMap extends CMSPlugin implements SubscriberInterface {
 
-    function __construct(& $subject, $params) {
-        parent::__construct($subject, $params);
+    public static function getSubscribedEvents(): array
+    {
+        return [
+                'onContentPrepare' => 'onContentPrepare',   
+                ];
     }
 
-    function onContentPrepare($context, &$row, &$params, $limitstart) {
-        $output = $row->text;
+    function onContentPrepare(Event $event) {
+        if (!$this->getApplication()->isClient('site')) {
+            return;
+        }
+
+        // Get arguments - Joomla 4 and Joomla 5 are supported
+        [$context, $article, $params, $page] = array_values($event->getArguments());
+        if ($context !== "com_content.article" && $context !== "com_content.featured") return;
+        
+        $output = $article->text;
         $regex = "#{google_map}(.*?){/google_map}#s";
         $found = preg_match_all($regex, $output, $matches);
 
@@ -88,12 +104,12 @@ class plgContentembed_google_map extends JPlugin {
                 $count++;
             }
             for ($i = 0; $i < count($replacement); $i++) {
-                $row->text = preg_replace($regex, $replacement[$i], $row->text, 1);
+                $output = preg_replace($regex, $replacement[$i], $output, 1);
             }
         }
-        return true;
+        // Update the article text with the processed text
+        $article->text = $output;
     }
-
 }
 
 ?>
