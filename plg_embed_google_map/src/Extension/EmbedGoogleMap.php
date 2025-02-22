@@ -38,10 +38,6 @@ class EmbedGoogleMap extends CMSPlugin implements SubscriberInterface {
         [$context, $article, $params, $page] = array_values($event->getArguments());
         if ($context !== "com_content.article" && $context !== "com_content.featured") return;
         
-        // Get the article text
-        //$text = $article->text;
-
-        //----------
         $output = $article->text;
         $regex = "#{google_map}(.*?){/google_map}#s";
         $found = preg_match_all($regex, $output, $matches);
