@@ -1,11 +1,14 @@
 <?php
+namespace Joomla\Plugin\Content\EmbedGoogleMap\Extension;
 
 /**
- * @version	$Id: Embed Google Map v2.3.1 2022-07-21 16:23 $
- * @package	Joomla 1.6
- * @copyright	Copyright (C) 2014-2022 Petteri Kivimäki. All rights reserved.
- * @author	Petteri Kivimäki
+ * @copyright   Copyright (C) 2014-2025 Petteri Kivimäki. All rights reserved.
+ * @license     GNU General Public License version 3; see LICENSE
+ * @author	    Petteri Kivimäki
  */
+
+use Joomla\CMS\Factory;
+
 abstract class EmbedGoogleMapHtmlBuilder {
 
     private static $scriptDeclarationAdded = false;
@@ -68,7 +71,7 @@ abstract class EmbedGoogleMapHtmlBuilder {
     }
 
     private function addLoadAsyncScript($delayMs) {
-        $document = JFactory::getDocument();
+        $document = Factory::getApplication()->getDocument();
 
         $document->addScriptDeclaration('
             jQuery(function($) {
@@ -105,7 +108,7 @@ abstract class EmbedGoogleMapHtmlBuilder {
     }
 
     private function addLoadNoScrollCss() {
-        $document = JFactory::getDocument();
+        $document = Factory::getApplication()->getDocument();
         $document->addStyleDeclaration('
 			iframe.embedGoogleMap {
 				pointer-events: none;
@@ -114,7 +117,7 @@ abstract class EmbedGoogleMapHtmlBuilder {
     }
 
     private function addLoadNoScrollScript() {
-        $document = JFactory::getDocument();
+        $document = Factory::getApplication()->getDocument();
         $document->addScriptDeclaration('
             jQuery(document).ready(function($){
                 $("div[id^=\'embedGoogleMapWrapper-\']").click(function () {

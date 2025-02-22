@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.0 - 2025-02-22
+- Add support for Joomla 4 and Joomla 5 without the Compatibility plugin.
+- Remove support for Joomla 3.
+
 ## 2.3.1 - 2022-07-21
 - Fix uncaught JavaScript TypeError (#85).
 
