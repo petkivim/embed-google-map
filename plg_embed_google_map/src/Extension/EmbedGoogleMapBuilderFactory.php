@@ -4,7 +4,7 @@ namespace Joomla\Plugin\Content\EmbedGoogleMap\Extension;
 /**
  * @copyright   Copyright (C) 2014-2025 Petteri Kivimäki. All rights reserved.
  * @license     GNU General Public License version 3; see LICENSE
- * @author	    Petteri Kivimäki
+ * @author      Petteri Kivimäki
  */
  require_once __DIR__ . '/EmbedGoogleMapClassicHtmlBuilder.php';
  require_once __DIR__ . '/EmbedGoogleMapNewHtmlBuilder.php';
