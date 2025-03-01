@@ -2,7 +2,7 @@
 
 Embed Google Map is a plugin for embedding one or more Google Maps to Joomla articles. Adding maps to an article is very simple, just add the address or the coordinates which location you want to show an a map inside google_maps tags to an article, and that's it! It's also possible to define the version of Google Maps (Google Maps, Google Maps Classic, Google Maps Embed API), the type of the map (normal, satellite, hybrid, terrain), the size of the map, the language of the Google Maps interface, zoom level, border layout and link to the full size map. Embedding maps created in Google Maps Engine is supported as well.
 
-**Note**: Embed Google Map versions >= 3.0.0 support Joomla 4 and later. Instead, Embed Google Map versions < 3.0.0 support Joomla 3, Joomla 4 and Joomla 5, but the compatibility plugin must be enabled on Joomla 5.
+**Note**: Embed Google Map versions >= 3.0.0 support Joomla 4 and later. Instead, Embed Google Map versions < 3.0.0 support Joomla 1.6, Joomla 2.5, Joomla 3, Joomla 4 and Joomla 5, but the compatibility plugin must be enabled on Joomla 5.
 
 ## Features
 
