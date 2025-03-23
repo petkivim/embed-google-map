@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.1 - 2025-03-23
+- Remove context-related restrictions (#94).
+  - Before, only `com_content.article` and `com_content.featured` contexts were enabled.
+
 ## 3.0.0 - 2025-02-22
 - Add support for Joomla 4 and Joomla 5 without the Compatibility plugin.
 - Remove support for Joomla 3.
