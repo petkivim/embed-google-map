@@ -35,7 +35,6 @@ class EmbedGoogleMap extends CMSPlugin implements SubscriberInterface {
 
         // Get arguments - Joomla 4 and Joomla 5 are supported
         [$context, $article, $params, $page] = array_values($event->getArguments());
-        if ($context !== "com_content.article" && $context !== "com_content.featured") return;
         
         $output = $article->text;
         $regex = "#{google_map}(.*?){/google_map}#s";
