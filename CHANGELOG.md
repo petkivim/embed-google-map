@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.0.2 - 2025-05-10
+- Fix PHP warning (#98). 
+
 ## 3.0.1 - 2025-03-23
 - Remove context-related restrictions (#94).
   - Before, only `com_content.article` and `com_content.featured` contexts were enabled.
