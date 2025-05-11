@@ -2,11 +2,11 @@
 <extension type="plugin" group="content" method="upgrade">
     <name>PLG_EMBED_GOOGLE_MAP</name>
     <author>Petteri Kivimäki</author>
-    <creationDate>23 March 2025</creationDate>
+    <creationDate>11 May 2025</creationDate>
     <copyright>(C)2012-2025 Petteri Kivimäki</copyright>
     <license>GNU General Public License version 3; see LICENSE</license>
     <authorEmail>dinky_jackson@hotmail.com</authorEmail>
-    <version>3.0.1</version>
+    <version>3.0.2</version>
     <description>PLG_EMBED_GOOGLE_MAP_DESC</description>
 	<namespace path="src">Joomla\Plugin\Content\EmbedGoogleMap</namespace>
 	<files>
