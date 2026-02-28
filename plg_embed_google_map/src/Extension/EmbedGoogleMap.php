@@ -24,7 +24,7 @@ class EmbedGoogleMap extends CMSPlugin implements SubscriberInterface {
     public static function getSubscribedEvents(): array
     {
         return [
-                'onContentPrepare' => 'onContentPrepare',   
+                'onContentPrepare' => 'onContentPrepare',
                 ];
     }
 
@@ -35,8 +35,8 @@ class EmbedGoogleMap extends CMSPlugin implements SubscriberInterface {
 
         // Get arguments - Joomla 4 and Joomla 5 are supported
         [$context, $article, $params, $page] = array_values($event->getArguments());
-        
-        // Check that the article text is set and not null, 
+
+        // Check that the article text is set and not null,
         // and return an empty string if it isn't
         $output = isset($article->text) ? $article->text : '';
         $regex = "#{google_map}(.*?){/google_map}#s";
@@ -87,7 +87,7 @@ class EmbedGoogleMap extends CMSPlugin implements SubscriberInterface {
 
                 // If system language is used, get the system language code
                 if (strcmp($plgParams->getLanguage(), 'system') == 0) {
-                    $lng = JFactory::getLanguage();
+                    $lng = Factory::getApplication()->getLanguage();
                     $langtag = $lng->getTag();
                     $langprfx = explode('-', $langtag);
                     $plgParams->setLanguage($langprfx[0]);
