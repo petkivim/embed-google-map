@@ -1,7 +1,10 @@
 # Changelog
 
+## 3.0.3 - 2026-02-28
+- Fix minor compatibility bug (#103).
+
 ## 3.0.2 - 2025-05-11
-- Fix PHP warning (#98). 
+- Fix PHP warning (#98).
 
 ## 3.0.1 - 2025-03-23
 - Remove context-related restrictions (#94).
