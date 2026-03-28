@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.x.x - xxxx-xx-xx
+## 3.1.0 - 2026-03-28
 - Add support for Joomla Update Server (#106).
 
 ## 3.0.3 - 2026-02-28
