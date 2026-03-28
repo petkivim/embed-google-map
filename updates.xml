@@ -6,6 +6,7 @@
         <element>embed_google_map</element>
         <type>plugin</type>
         <folder>content</folder>
+        <client>site</client>
         <version>3.1.0</version>
         <infourl title="Embed Google Map">https://github.com/petkivim/embed-google-map</infourl>
         <downloads>
@@ -23,6 +24,7 @@
         <element>embed_google_map</element>
         <type>plugin</type>
         <folder>content</folder>
+        <client>site</client>
         <version>3.0.3</version>
         <infourl title="Embed Google Map">https://github.com/petkivim/embed-google-map</infourl>
         <downloads>
