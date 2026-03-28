@@ -271,4 +271,7 @@
 			</fieldset>
 		</fields>
 	</config>
+	<updateservers>
+		<server type="extension" name="Embed Google Map Updates">https://raw.githubusercontent.com/petkivim/embed-google-map/refs/heads/master/updates.xml</server>
+	</updateservers>
 </extension>
