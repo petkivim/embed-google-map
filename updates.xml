@@ -12,7 +12,7 @@
         <downloads>
             <downloadurl type="full" format="zip">https://raw.githubusercontent.com/petkivim/embed-google-map/master/archive/plg_content_embed_google_map-3.1.0.zip</downloadurl>
         </downloads>
-        <sha256>43a83fe0e62c53fed009e17c255c192224ea108086a2c4dea1dc6194f1420580</sha256>
+        <sha256>5a5976a44c626546f98719dad00e445f7cb65432e8ad40e3233effe1901c1e43</sha256>
         <targetplatform name="joomla" version="4.*"/>
         <targetplatform name="joomla" version="5.*"/>
         <targetplatform name="joomla" version="6.*"/>
